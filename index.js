@@ -1,13 +1,13 @@
 function montecarlo(input, senarios, precision) {
-  if (typeof senarios !== 'number') {
+  if (typeof senarios != 'number') {
     throw 'You must provide a number of scenarios (example: 5000)';
   }
 
-  if (typeof precision !== 'number') {
+  if (typeof precision != 'number') {
     throw 'You must provide a precision (example: 10)';
   }
 
-  var results = [];
+  results = [];
   for (i = 0; i < senarios; i++) {
     result = pass(input);
     result = parseFloat(result.toPrecision(precision));
@@ -40,4 +40,3 @@ function getSignificand(n) {
   while (n != 0 && n % 10 == 0) n /= 10; //kill the 0s at the end of n
   return Math.floor(Math.log(n) / log10) + 1; //get number of digits
 }
-
