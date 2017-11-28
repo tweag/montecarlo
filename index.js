@@ -33,18 +33,18 @@ function groupedFrequency(forecast, count) {
   var max = Math.ceil(Math.max.apply(null, forecast));
   var classWidth = Math.ceil((max - min) / count);
 
-  function percentOfForecast(x) {
+  function makeBin(x) {
     var valuesInRange = forecast.filter(function (value) {
       return value >= x && value < (x + classWidth);
     });
 
-    return valuesInRange.length / forecast.length;
+    return [x, valuesInRange.length / forecast.length];
   }
 
-  var bins = [[min, percentOfForecast(min)]];
+  var bins = [makeBin(min)];
   for (i = 1; i < count; i++) {
-    var x = bins[bins.length - 1][0] + classWidth;
-    bins.push([x, percentOfForecast(x)]);
+    var prev = bins[bins.length - 1][0];
+    bins.push(makeBin(prev + classWidth));
   }
 
   return bins;
