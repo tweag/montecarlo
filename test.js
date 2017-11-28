@@ -13,21 +13,46 @@ global.Math.random = (() => {
  */
 eval(fs.readFileSync('./index.js').toString());
 
+/**
+ * T-Shirt sizes that we use for estimates
+ */
 const XS = [.25, .5];
 const S  = [.5, 1];
 const M  = [1, 3];
 const L  = [3, 5];
 const XL = [5, 10];
 
-const dataset = [
-  M, L, M, M, L, XL, M, XL, L, M,
-  M, L, M, M, L, S, M, M
-];
+/**
+ * An example estimate
+ */
+const ESTIMATE = [M, L, M, M, L, XL, M, XL, L, M, M, L, M, M, L, S, M, M];
 
-test('generates a distribution', () => {
-  expect(montecarlo(dataset, 25, 10)).toMatchSnapshot();
+describe('montecarlo', () => {
+  test('generates a distribution', () => {
+    expect(montecarlo(ESTIMATE, 25, 10)).toMatchSnapshot();
+  });
+
+  test('generates the correct number of results', () => {
+    expect(montecarlo(ESTIMATE, 25, 10)).toHaveLength(25);
+  });
 });
 
-test('generates the correct number of results', () => {
-  expect(montecarlo(dataset, 25, 10)).toHaveLength(25);
+describe('groupedFrequency', () => {
+  const data = [5, 6, 7, 7, 8, 8, 9, 10, 13];
+
+  test('can allocate 2 bins', () => {
+    expect(groupedFrequency(data, 2)).toMatchSnapshot();
+  });
+
+  test('can allocate 3 bins', () => {
+    expect(groupedFrequency(data, 3)).toMatchSnapshot();
+  });
+
+  test('can allocate 4 bins', () => {
+    expect(groupedFrequency(data, 4)).toMatchSnapshot();
+  });
+
+  test('can allocate 5 bins', () => {
+    expect(groupedFrequency(data, 5)).toMatchSnapshot();
+  });
 });

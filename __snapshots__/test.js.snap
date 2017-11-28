@@ -1,6 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generates a distribution 1`] = `
+exports[`groupedFrequency can allocate 2 bins 1`] = `
+Array [
+  Array [
+    5,
+    0.6666666666666666,
+  ],
+  Array [
+    9,
+    0.2222222222222222,
+  ],
+]
+`;
+
+exports[`groupedFrequency can allocate 3 bins 1`] = `
+Array [
+  Array [
+    5,
+    0.4444444444444444,
+  ],
+  Array [
+    8,
+    0.4444444444444444,
+  ],
+  Array [
+    11,
+    0.1111111111111111,
+  ],
+]
+`;
+
+exports[`groupedFrequency can allocate 4 bins 1`] = `
+Array [
+  Array [
+    5,
+    0.2222222222222222,
+  ],
+  Array [
+    7,
+    0.4444444444444444,
+  ],
+  Array [
+    9,
+    0.2222222222222222,
+  ],
+  Array [
+    11,
+    0,
+  ],
+]
+`;
+
+exports[`groupedFrequency can allocate 5 bins 1`] = `
+Array [
+  Array [
+    5,
+    0.2222222222222222,
+  ],
+  Array [
+    7,
+    0.4444444444444444,
+  ],
+  Array [
+    9,
+    0.2222222222222222,
+  ],
+  Array [
+    11,
+    0,
+  ],
+  Array [
+    13,
+    0.1111111111111111,
+  ],
+]
+`;
+
+exports[`montecarlo generates a distribution 1`] = `
 Array [
   52.95,
   52.85,
