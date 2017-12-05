@@ -23,7 +23,7 @@ Imagine you have a list of ballpark estimates (in number of days).
 
 So, for example, we've estimated that the "Login" feature will take between 1 and 3 days.
 
-#### Creating a distribution
+### Creating a distribution
 
 You can use the `montecarlo` function to generate a distribution of random estimates that summarize our predictions above:
 
@@ -49,7 +49,7 @@ The result will be a list of 5,000 possible scenarios for how long our project s
 ...
 ```
 
-#### Summarizing our data
+### Summarizing our data
 
 Next, we'll generate a grouped frequency from our values.
 
