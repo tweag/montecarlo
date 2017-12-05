@@ -7,7 +7,7 @@
 ## Installation
 
 1. In a Google Sheet, go to `Tools > Script Editor`.
-2. Copy the contents of `index.js` into your script editor.
+2. Copy the contents of [`index.js`](https://github.com/promptworks/montecarlo/raw/master/index.js) into your script editor.
 3. Save it.
 
 ## Usage
